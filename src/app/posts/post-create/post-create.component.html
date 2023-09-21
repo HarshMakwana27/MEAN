@@ -1,21 +1,39 @@
 
-<mat-card>
-    <mat-form-field>
-        <textarea matInput rows="10" [(ngModel)]="enteredValue"></textarea>
+<form action="" (submit)="onAddPost(PostForm)" #PostForm="ngForm">
+
+    <mat-form-field class = "centered-input">
+        <input matInput  
+        rows="1" 
+        name="title"
+        ngModel
+        required
+        #title="ngModel">
+        <mat-error *ngIf="title.invalid"> Title can not be empty</mat-error>
+
     </mat-form-field>
 
-    
-    <button 
+
+    <mat-card>
+        <mat-form-field>
+         <textarea 
+         matInput 
+         rows="10" 
+         name="content"
+         nagModel
+         required
+        >
+        </textarea>
+       </mat-form-field>
+
+        <button 
         color="primary"
         mat-raised-button 
-        (click) = "onAddPost()" > Save post
-    </button>
+        type = "submit" > Save post
+        </button>
+    </mat-card>
 
-</mat-card>
-
-
-
+</form>
 
 
 
-<p>{{newPost}}</p> 
+
