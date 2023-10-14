@@ -6,6 +6,7 @@
         rows="1" 
         name="title"
         ngModel
+        placeholder="Enter the title"
         required
         #title="ngModel">
         <mat-error *ngIf="title.invalid"> Title can not be empty</mat-error>
@@ -19,10 +20,13 @@
          matInput 
          rows="10" 
          name="content"
-         nagModel
+         ngModel
          required
-        >
-        </textarea>
+         placeholder="Enter the content"
+        #content="ngModel">
+        >   </textarea>
+        <mat-error *ngIf="content.invalid"> content can not be empty</mat-error>
+     
        </mat-form-field>
 
         <button 
